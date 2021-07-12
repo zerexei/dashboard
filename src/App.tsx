@@ -2,7 +2,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavBar from "./Components/NavBar";
 import NavUser from "./Components/NavUser";
+import Dashboard from "./Components/pages/Dashboard";
 import Home from "./Components/pages/Home";
+import Issues from "./Components/pages/Issues";
+import PullRequest from "./Components/pages/PullRequest";
+import Releases from "./Components/pages/Releases";
+import Stats from "./Components/pages/Stats";
+import Wiki from "./Components/pages/Wiki";
 
 function App() {
   return (
@@ -19,10 +25,12 @@ function App() {
           <div className="flex-1 p-2 rounded-r">
             <Switch>
               <Route exact path="/" component={Home} />
-
-              <Route path="/profile">
-                <h2>profile</h2>
-              </Route>
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/issues" component={Issues} />
+              <Route path="/pull-request" component={PullRequest} />
+              <Route path="/releases" component={Releases} />
+              <Route path="/wiki" component={Wiki} />
+              <Route path="/stats" component={Stats} />
             </Switch>
           </div>
         </div>
