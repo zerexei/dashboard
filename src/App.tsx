@@ -18,7 +18,7 @@ function App() {
           {/* =================RIGHT==================== */}
           <div className="flex-1 p-2 rounded-r">
             <Switch>
-              <Route exact path="/" component={<Home />} />
+              <Route exact path="/" component={Home} />
 
               <Route path="/profile">
                 <h2>profile</h2>
