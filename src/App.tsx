@@ -10,6 +10,7 @@ import Releases from "./Components/pages/Releases";
 import Repositories from "./Components/pages/Repositories";
 import Repository from "./Components/pages/Repository";
 import Stats from "./Components/pages/Stats";
+import Trendy from "./Components/pages/Trendy";
 import Wiki from "./Components/pages/Wiki";
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/repos" component={Repositories} />
               <Route exact path="/repos/:name" component={Repository} />
+              <Route exact path="/trendy" component={Trendy} />
+
               <Route exact path="/issues" component={Issues} />
               <Route exact path="/pull-request" component={PullRequest} />
               <Route exact path="/releases" component={Releases} />

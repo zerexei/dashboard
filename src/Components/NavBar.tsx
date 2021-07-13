@@ -46,6 +46,18 @@ const NavBar = () => {
           Repositories
         </p>
       </NavLink>
+
+      <NavLink
+        to="/trendy"
+        exact
+        activeClassName="bg-gray-200"
+        className="p-2 hover:bg-gray-200"
+      >
+        <p className="flex items-center gap-2">
+          <CollectionIcon className="w-5 h-5 "></CollectionIcon>
+          Trending Repos
+        </p>
+      </NavLink>
       
 
 
