@@ -1,7 +1,8 @@
-import axios from "axios";
-import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import config from "../.config";
+
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 type UserProps = {
   avatar_url: string;
@@ -12,22 +13,20 @@ const NavUser = () => {
   const [user, setUser] = useState<UserProps>({} as UserProps);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const fetchedUser = await axios.get(
-          "https://api.github.com/users/zerexei",
-          {
-            headers: {
-              Authorization: `token ${config.api_key}`,
-            },
-          }
-        );
-        setUser(fetchedUser.data);
-      } catch (error) {
-        console.trace(error);
+    getUser();
+  }, []);
+
+  const getUser = async () => {
+    const fetchedUser = await axios.get(
+      "https://api.github.com/users/zerexei",
+      {
+        headers: {
+          Authorization: `token ${config.api_key}`,
+        },
       }
-    })();
-  });
+    );
+    setUser(await fetchedUser.data);
+  };
 
   return (
     <div>
