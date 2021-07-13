@@ -7,6 +7,7 @@ import Home from "./Components/pages/Home";
 import Issues from "./Components/pages/Issues";
 import PullRequest from "./Components/pages/PullRequest";
 import Releases from "./Components/pages/Releases";
+import Repositories from "./Components/pages/Repositories";
 import Stats from "./Components/pages/Stats";
 import Wiki from "./Components/pages/Wiki";
 
@@ -26,6 +27,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/dashboard" component={Dashboard} />
+              <Route path="/repos" component={Repositories} />
               <Route path="/issues" component={Issues} />
               <Route path="/pull-request" component={PullRequest} />
               <Route path="/releases" component={Releases} />
