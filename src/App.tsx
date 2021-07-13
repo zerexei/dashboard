@@ -8,6 +8,7 @@ import Issues from "./Components/pages/Issues";
 import PullRequest from "./Components/pages/PullRequest";
 import Releases from "./Components/pages/Releases";
 import Repositories from "./Components/pages/Repositories";
+import Repository from "./Components/pages/Repository";
 import Stats from "./Components/pages/Stats";
 import Wiki from "./Components/pages/Wiki";
 
@@ -26,13 +27,14 @@ function App() {
           <div className="flex-1 p-2 rounded-r">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/repos" component={Repositories} />
-              <Route path="/issues" component={Issues} />
-              <Route path="/pull-request" component={PullRequest} />
-              <Route path="/releases" component={Releases} />
-              <Route path="/wiki" component={Wiki} />
-              <Route path="/stats" component={Stats} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/repos" component={Repositories} />
+              <Route exact path="/repos/:name" component={Repository} />
+              <Route exact path="/issues" component={Issues} />
+              <Route exact path="/pull-request" component={PullRequest} />
+              <Route exact path="/releases" component={Releases} />
+              <Route exact path="/wiki" component={Wiki} />
+              <Route exact path="/stats" component={Stats} />
             </Switch>
           </div>
         </div>
