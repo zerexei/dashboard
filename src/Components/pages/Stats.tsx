@@ -115,7 +115,7 @@ const VerticalBar = () => {
     ],
     datasets: [
       {
-        label: "# of Votes",
+        label: "# of request",
         data: [rand(), rand(), rand(), rand()],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
