@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../.config";
+import { Link } from "react-router-dom";
 
 export interface RepoProps {
   id: number;
@@ -46,12 +47,18 @@ const Repositories = () => {
     (repo: RepoProps) => {
       return (
         <div key={repo.id} className="w-1/5 h-40 p-6 bg-gray-50">
-          <a
-            href={repo.html_url}
-            className="text-blue-400 hover:text-blue-500 hover:underline"
-          >
-            {repo.name}
-          </a>
+          <div className="flex justify-between items-center">
+            <a
+              href={repo.html_url}
+              className="text-blue-400 hover:text-blue-500 hover:underline"
+            >
+              {repo.name}
+            </a>
+
+            <Link to={`/repos/${repo.name}`} className="text-xs">
+              View
+            </Link>
+          </div>
           <p className="mt-4 text-sm text-gray-900">
             {repo?.description || "No description available"}
           </p>
