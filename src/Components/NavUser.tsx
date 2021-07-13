@@ -1,9 +1,11 @@
 import axios from "axios";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useEffect, useState } from "react";
+import config from "../.config";
 
 type UserProps = {
   avatar_url: string;
+  name: string;
 };
 
 const NavUser = () => {
@@ -13,7 +15,12 @@ const NavUser = () => {
     (async () => {
       try {
         const fetchedUser = await axios.get(
-          "https://api.github.com/users/zerexei"
+          "https://api.github.com/users/zerexei",
+          {
+            headers: {
+              Authorization: `token ${config.api_key}`,
+            },
+          }
         );
         setUser(fetchedUser.data);
       } catch (error) {
@@ -33,7 +40,7 @@ const NavUser = () => {
           />
         </div>
         <h2 className="flex items-center p-2 cursor-pointer hover:bg-gray-200">
-          Lorem Ipsum
+          {user.name}
           <ChevronDownIcon className="h-5 w-5"></ChevronDownIcon>
         </h2>
       </div>
