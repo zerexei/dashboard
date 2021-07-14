@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import NavUser from "./Components/NavUser";
 import Dashboard from "./Components/pages/Dashboard";
+import Gists from "./Components/pages/Gists";
 import Home from "./Components/pages/Home";
 import Issues from "./Components/pages/Issues";
 import PullRequest from "./Components/pages/PullRequest";
@@ -32,6 +33,7 @@ function App() {
               <Route exact path="/repos" component={Repositories} />
               <Route exact path="/repos/:name" component={Repository} />
               <Route exact path="/trendy" component={Trendy} />
+              <Route exact path="/gists" component={Gists} />
 
               <Route exact path="/issues" component={Issues} />
               <Route exact path="/pull-request" component={PullRequest} />

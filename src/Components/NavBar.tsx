@@ -10,15 +10,14 @@ import {
 } from "@heroicons/react/solid";
 
 // my repos
-  // stats
-  // issues
-  // pr
+// stats
+// issues
+// pr
 // popular updated repos
 // my gists
 // all gists
 // notifications
 // /zen
-
 
 const NavBar = () => {
   return (
@@ -34,7 +33,7 @@ const NavBar = () => {
           Dashboard
         </p>
       </NavLink>
-      
+
       <NavLink
         to="/repos"
         exact
@@ -58,33 +57,18 @@ const NavBar = () => {
           Trending Repos
         </p>
       </NavLink>
-      
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <NavLink
+        to="/gists"
+        exact
+        activeClassName="bg-gray-200"
+        className="p-2 hover:bg-gray-200"
+      >
+        <p className="flex items-center gap-2">
+          <CollectionIcon className="w-5 h-5 "></CollectionIcon>
+          All gists
+        </p>
+      </NavLink>
 
       <NavLink
         to="/issues"
